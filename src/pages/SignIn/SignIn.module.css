@@ -11,7 +11,7 @@
 .containerFormulario{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 360px;
     min-height: 350px;
     background-color: #EEEEEE;
     border-radius: 10px;
@@ -78,12 +78,13 @@
 }
 
 .buttonAccess{
-    background-color: #218897;
+    background-color: #00B495;
     color:#FFFFFF;
-    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
     border:none;
     border-radius: 10px;
-    width: 150px;
+    width: 100%;
     height: 40px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }

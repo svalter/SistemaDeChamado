@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FiMail, FiEye } from 'react-icons/fi';
+import { FiMail, FiEye, FiEyeOff } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import styled from './SignIn.module.css'
 
@@ -9,6 +9,12 @@ function SignIn() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassoword, setShowPassword] = useState(true);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('Clicou')
+  }
 
   return (
     <div className={styled.container}>
@@ -16,20 +22,41 @@ function SignIn() {
         <div className={styled.logo}>
           <img src={Logo} alt="Logo Sistema de Chamados" className={styled.logoImg} />
         </div>
+
         <h2 className={styled.title}>Entrar</h2>
-        <form className={styled.formulario}>
+        
+        <form onSubmit={handleSubmit} className={styled.formulario}>
           <div className={styled.contentInputs}>
-            <input type="text" placeholder="Digite seu email" className={styled.inputs} />
+            <input
+              type="text"
+              placeholder="Digite seu email"
+              className={styled.inputs}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} />
             <FiMail className={styled.icons} />
           </div>
           <div className={styled.contentInputs}>
-            <input type="password" placeholder="Digite sua senha" className={styled.inputs} />
-            <FiEye className={styled.icons} />
+            <input
+              type={showPassoword ? "text" : "password"}
+              placeholder="Digite sua senha"
+              className={styled.inputs}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} />
+            <div onClick={() => setShowPassword(!showPassoword)}>
+              {showPassoword ?
+                (
+                  <FiEyeOff className={styled.icons} />
+                )
+                :
+                (
+                  <FiEye className={styled.icons} />
+                )
+              }
+            </div>
           </div>
-          <button className={styled.buttonAccess}>Acessar</button>
+          <button type="submit" className={styled.buttonAccess}>Acessar</button>
         </form>
         <Link to="/register" className={styled.links}>Criar uma conta</Link>
-        <Link to="" className={styled.links}>Esqueci minha senha</Link>
       </div>
     </div>
   );
