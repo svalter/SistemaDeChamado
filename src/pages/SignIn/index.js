@@ -3,13 +3,13 @@ import { FiMail, FiEye, FiEyeOff } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import styled from './SignIn.module.css'
 
-import Logo from '../../assets/logo/logo.png'
+import Logo from '../../assets/logo/logo.svg'
 
 function SignIn() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassoword, setShowPassword] = useState(true);
+  const [showPassoword, setShowPassword] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -22,9 +22,7 @@ function SignIn() {
         <div className={styled.logo}>
           <img src={Logo} alt="Logo Sistema de Chamados" className={styled.logoImg} />
         </div>
-
-        <h2 className={styled.title}>Entrar</h2>
-        
+        <h4 className={styled.title}>login</h4>
         <form onSubmit={handleSubmit} className={styled.formulario}>
           <div className={styled.contentInputs}>
             <input
@@ -45,11 +43,11 @@ function SignIn() {
             <div onClick={() => setShowPassword(!showPassoword)}>
               {showPassoword ?
                 (
-                  <FiEyeOff className={styled.icons} />
+                  <FiEye className={styled.icons} />
                 )
                 :
                 (
-                  <FiEye className={styled.icons} />
+                  <FiEyeOff className={styled.icons} />
                 )
               }
             </div>
