@@ -22,12 +22,14 @@ function SignIn() {
         <div className={styled.logo}>
           <img src={Logo} alt="Logo Sistema de Chamados" className={styled.logoImg} />
         </div>
-        <h4 className={styled.title}>login</h4>
+
+        <h4 className={styled.title}>Login</h4>
+
         <form onSubmit={handleSubmit} className={styled.formulario}>
           <div className={styled.contentInputs}>
             <input
               type="text"
-              placeholder="Digite seu email"
+              placeholder="E-mail"
               className={styled.inputs}
               value={email}
               onChange={(e) => setEmail(e.target.value)} />
@@ -36,7 +38,7 @@ function SignIn() {
           <div className={styled.contentInputs}>
             <input
               type={showPassoword ? "text" : "password"}
-              placeholder="Digite sua senha"
+              placeholder="Senha"
               className={styled.inputs}
               value={password}
               onChange={(e) => setPassword(e.target.value)} />
