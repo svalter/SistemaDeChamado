@@ -1,10 +1,9 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/app';
+import 'firebase/compat/firestore';
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyAWA-mxD3zAa0ddyV3th8Mgni2_6YGdUQc",
   authDomain: "sistema-chamado-b1cac.firebaseapp.com",
@@ -16,6 +15,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebase = initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig)
 
 export default firebase
