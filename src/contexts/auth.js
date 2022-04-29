@@ -26,7 +26,7 @@ function AuthProvider({ children }) {
 
     async function signUp(email, password, name) {
         setLoadingAuth(true);
-        await firebase.auth.createUserWithEmailAndPassword(email, password)
+        await firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(async (value) => {
                 let uid = value.user.uid;
 

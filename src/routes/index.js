@@ -7,25 +7,22 @@ import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
 
 
+
 export default function RoutesApp() {
 
-    const { signed, loading } = useContext(AuthContext);
 
-    console.log('euuuuuuuuuuuuuu',signed);
-
-    if(signed){
-        <Navigate to="/home"/>
-    }
-    else{
-        <Navigate to="/"/>
+    function PrivateRoute({ children }) {
+        const { signed, loading } = useContext(AuthContext);
+        return signed ? children : <Navigate to="/" />;
     }
 
     return (
         <Routes>
             <Route path="/" element={<SignIn />} />
             <Route path="/register" element={<SignUp />} />
-            <Route path="/home" element={<Dashboard />}
-            />
+            <Route path="/home" element={<PrivateRoute />}>
+                <Route element={<Dashboard />} />
+            </Route>
         </Routes>
     )
 }
