@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FiMail, FiEye, FiEyeOff } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../../contexts/auth";
 import styled from './SignIn.module.css'
 
 import Logo from '../../assets/logo/logo.svg'
@@ -11,9 +12,15 @@ function SignIn() {
   const [password, setPassword] = useState('');
   const [showPassoword, setShowPassword] = useState(false);
 
+  const { signIn } = useContext(AuthContext);
+
   function handleSubmit(e) {
     e.preventDefault();
-    alert('Clicou')
+
+    if(email !== '' && password !== ''){
+      signIn(email, password);
+    }
+    
   }
 
   return (
