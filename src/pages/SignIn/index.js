@@ -2,9 +2,9 @@ import React, { useState, useContext } from "react";
 import { FiMail, FiEye, FiEyeOff } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../../contexts/auth";
-import styled from './SignIn.module.css'
+import styled from './SignIn.module.css';
 
-import Logo from '../../assets/logo/logo.svg'
+import Logo from '../../assets/logo/logo.svg';
 
 function SignIn() {
 

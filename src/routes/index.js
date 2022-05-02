@@ -21,7 +21,7 @@ export default function RoutesApp() {
             {signed && (
                 <Route path="/dashboard" element={<Dashboard />} />
             )}
-            <Route path="*" element={signed ? <h1>Not found</h1> : <Navigate to="/auth" />} />
+            <Route path="*" element={signed ? <Navigate to="/dashboard"/> : <Navigate to="/auth"/>} />
         </Routes>
     )
 }
