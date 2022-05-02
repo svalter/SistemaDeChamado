@@ -38,7 +38,7 @@ function AuthProvider({ children }) {
 
                 let data = {
                     uid: uid,
-                    name: userProfile.data().nome,
+                    name: userProfile.data().name,
                     avatarUrl: userProfile.data().avatarUrl,
                     email: value.user.email
                 };
@@ -63,13 +63,13 @@ function AuthProvider({ children }) {
 
                 await firebase.firestore().collection('users')
                     .doc(uid).set({
-                        nome: name,
+                        name: name,
                         avatarUrl: null,
                     })
                     .then(() => {
                         let data = {
                             uid: uid,
-                            nome: name,
+                            name: name,
                             email: value.user.email,
                             avatarUrl: null
                         };

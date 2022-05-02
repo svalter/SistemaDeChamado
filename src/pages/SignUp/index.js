@@ -2,9 +2,9 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/auth";
 import { FiMail, FiEye, FiEyeOff, FiUser } from 'react-icons/fi';
-import styled from './SignUp.module.css'
+import styled from './SignUp.module.css';
 
-import Logo from '../../assets/logo/logo.svg'
+import Logo from '../../assets/logo/logo.svg';
 
 function SignUp() {
   const [name, setName] = useState('');
