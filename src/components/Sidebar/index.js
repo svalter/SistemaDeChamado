@@ -7,9 +7,8 @@ import Logo from '../../assets/logo/logo.svg';
 
 
 export default function Sidebar() {
-
     const { user } = useContext(AuthContext);
-    console.log(user);
+    
     return (
         <div className={styled.containerSiderbar}>
             <div className={styled.containerLogo}>
