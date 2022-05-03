@@ -28,6 +28,12 @@
     justify-content: start;
     align-items: center;
     padding: 0 10px;
+    transition: 0.1s ease-in-out;
+}
+
+.links:hover{
+    cursor: pointer;
+    background-color: #00639C;
 }
 
 .linksIcons{
@@ -38,6 +44,7 @@
 .linksTitle{
     text-decoration: none;
     color:#FFFFFF;
+    font-size: 14px;
 }
 
 .logoImg{
