@@ -17,20 +17,19 @@ export default function Sidebar() {
             <div className={styled.containerLinks}>
                 <div className={styled.links}>
                     <FiHome className={styled.linksIcons} />
-                    <Link to="called" className={styled.linksTitle}>
+                    <Link to="/dashboard" className={styled.linksTitle}>
                         <p>Chamados</p>
                     </Link>
                 </div>
                 <div className={styled.links}>
                     <FiUsers className={styled.linksIcons} />
-                    <Link to="client" className={styled.linksTitle}>
-
+                    <Link to="/client" className={styled.linksTitle}>
                         <p>Clientes</p>
                     </Link>
                 </div>
                 <div className={styled.links}>
                     <FiSettings className={styled.linksIcons} />
-                    <Link to="settings" className={styled.linksTitle}>
+                    <Link to="/profile" className={styled.linksTitle}>
                         <p >Configurações</p>
                     </Link>
                 </div>
