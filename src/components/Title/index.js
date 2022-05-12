@@ -1,8 +1,11 @@
 import React from 'react';
-import './Title.module.css';
+import styled from './Title.module.css';
 
-export default function Title() {
+export default function Title({children, name}) {
     return(
-        <p>Titulo</p>
+        <div className={styled.title}>
+            {children}
+            <span>{name}</span>
+        </div>
     )
 }
