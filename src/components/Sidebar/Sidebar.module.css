@@ -28,12 +28,12 @@
     justify-content: start;
     align-items: center;
     padding: 0 10px;
-    transition: 0.1s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .links:hover{
     cursor: pointer;
-    background-color: #00639C;
+    background-color: #2b0681;
 }
 
 .linksIcons{

@@ -1,3 +1,6 @@
 .content{
     margin-left: 200px;
+    background-color: #f5bdbd;
+    width: calc(100% -200px);
+    min-height: 100vh;
 }
