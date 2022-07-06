@@ -31,9 +31,11 @@
     transition: 0.2s ease-in-out;
 }
 
-.links:hover{
+.linksTitle:hover,
+.buttonLogOut:hover{
     cursor: pointer;
-    background-color: #2b0681;
+    background-color: #003A78;
+    border-left: 2px solid #FFFFFF;
 }
 
 .linksIcons{
@@ -45,8 +47,29 @@
     text-decoration: none;
     color:#FFFFFF;
     font-size: 14px;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    transition: 0.1s ease-in-out;
+    padding-left: 8px;
+    border-left: 2px solid transparent;
 }
 
 .logoImg{
     height: 50px;
+}
+
+.buttonLogOut {
+    width: 100%;
+    text-align: start;
+    padding: 8px;
+    border-left: 2px solid transparent;
+    background-color: transparent;
+    color:#FFFFFF;
+    font-size: 14px;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    height: 45px;
 }

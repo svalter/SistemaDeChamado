@@ -12,27 +12,24 @@ function SignIn() {
   const [password, setPassword] = useState('');
   const [showPassoword, setShowPassword] = useState(false);
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn, loadingAuth } = useContext(AuthContext);
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    if(email !== '' && password !== ''){
+    if (email !== '' && password !== '') {
       signIn(email, password);
     }
-    
   }
 
   return (
     <div className={styled.container}>
-      <div className={styled.containerFormulario}>
+      <div className={styled.containerForm}>
         <div className={styled.logo}>
           <img src={Logo} alt="Logo Sistema de Chamados" className={styled.logoImg} />
         </div>
-
         <h4 className={styled.title}>Login</h4>
-
-        <form onSubmit={handleSubmit} className={styled.formulario}>
+        <form onSubmit={handleSubmit} className={styled.form}>
           <div className={styled.contentInputs}>
             <input
               type="text"
@@ -61,7 +58,7 @@ function SignIn() {
               }
             </div>
           </div>
-          <button type="submit" className={styled.buttonAccess}>Acessar</button>
+          <button type="submit" className={styled.buttonAccess}>{loadingAuth ? 'Carregando...' : 'Acessar'}</button>
         </form>
         <Link to="/register" className={styled.links}>Criar uma conta</Link>
       </div>

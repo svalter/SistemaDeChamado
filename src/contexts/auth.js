@@ -18,10 +18,8 @@ function AuthProvider({ children }) {
                 setUser(JSON.parse(storageUser))
                 setLoading(false);
             }
-
             setLoading(false);
         }
-
         loadStorage();
     }, [])
 
@@ -73,7 +71,6 @@ function AuthProvider({ children }) {
                             email: value.user.email,
                             avatarUrl: null
                         };
-
                         setUser(data);
                         storageUser(data);
                         setLoadingAuth(false);
@@ -84,7 +81,6 @@ function AuthProvider({ children }) {
                 console.log(error);
                 toast.error('Ops! Algo deu errado!');
                 setLoadingAuth(false);
-               
             })
     }
 
@@ -92,6 +88,11 @@ function AuthProvider({ children }) {
         localStorage.setItem('SistemaUser', JSON.stringify(data))
     }
 
+    async function signOut() {
+        await firebase.auth().signOut();
+        localStorage.removeItem('SistemaUser');
+        setUser(null);
+    }
 
 
     return (
@@ -101,7 +102,9 @@ function AuthProvider({ children }) {
                 user,
                 loading,
                 signUp,
-                signIn
+                signOut,
+                signIn,
+                loadingAuth
             }}>
             {children}
         </AuthContext.Provider>

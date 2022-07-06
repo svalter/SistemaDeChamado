@@ -8,10 +8,10 @@
     height: 100%;
 }
 
-.containerFormulario{
+.containerForm{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 350px;
     min-height: 350px;
     background-color: #FFFFFF;
     border-radius: 10px;
@@ -28,16 +28,17 @@
 
 .logoImg{
     margin: 10px 0 0 0;
-    width: 100%;
+    height: 110px;
 }
 
 .title{
     text-align: center;
     color: #8a8b99;
     margin-top: 10px;
+    font-size: 14px;
 }
 
-.formulario{
+.form{
     display: flex;
     flex-direction: column;
     align-items: center;
