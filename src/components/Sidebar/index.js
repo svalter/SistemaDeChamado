@@ -22,7 +22,7 @@ export default function Sidebar() {
                     <p>Chamados</p>
                 </Link>
 
-                <Link to="/client" className={styled.linksTitle}>
+                <Link to="/clients" className={styled.linksTitle}>
                     <FiUsers className={styled.linksIcons} />
                     <p>Clientes</p>
                 </Link>
