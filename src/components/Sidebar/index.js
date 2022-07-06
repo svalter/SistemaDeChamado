@@ -1,35 +1,42 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
-import { FiHome, FiSettings, FiUsers } from 'react-icons/fi';
+import { AuthContext } from "../../contexts/auth";
+import { FiHome, FiSettings, FiUsers, FiLogOut } from 'react-icons/fi';
 import styled from './Sidebar.module.css';
 import Logo from '../../assets/logo/logo.svg';
 
 
 export default function Sidebar() {
-    
+
+    const { user, signOut } = useContext(AuthContext)
+
     return (
         <div className={styled.containerSiderbar}>
-            <div className={styled.containerLogo}>
-                <img src={Logo} alt="Logo Sistema de Chamados" className={styled.logoImg} />
+            <div>
+                <img src={user.avatarUrl === null ? Logo : user.avatarUrl} alt="Foto avatar" />
             </div>
             <div className={styled.containerLinks}>
-                <div className={styled.links}>
+      
+                <Link to="/dashboard" className={styled.linksTitle}>
                     <FiHome className={styled.linksIcons} />
-                    <Link to="/dashboard" className={styled.linksTitle}>
-                        <p>Chamados</p>
-                    </Link>
-                </div>
-                <div className={styled.links}>
+                    <p>Chamados</p>
+                </Link>
+
+                <Link to="/client" className={styled.linksTitle}>
                     <FiUsers className={styled.linksIcons} />
-                    <Link to="/client" className={styled.linksTitle}>
-                        <p>Clientes</p>
-                    </Link>
-                </div>
-                <div className={styled.links}>
+                    <p>Clientes</p>
+                </Link>
+
+                <Link to="/profile" className={styled.linksTitle}>
                     <FiSettings className={styled.linksIcons} />
-                    <Link to="/profile" className={styled.linksTitle}>
-                        <p >Configurações</p>
-                    </Link>
+                    <p >Configurações</p>
+                </Link>
+
+                <div>
+                    <button onClick={() => signOut()} className={styled.buttonLogOut}>
+                        <FiLogOut className={styled.linksIcons}/>
+                        Sair
+                    </button>
                 </div>
             </div>
         </div>
