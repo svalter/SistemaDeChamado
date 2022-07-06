@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
+import Client from '../pages/Client';
 import Profile from '../pages/Profile';
 
 
@@ -22,6 +23,7 @@ export default function RoutesApp() {
             {signed && (
                 <>
                     <Route path="/dashboard" element={<Dashboard />}/>
+                    <Route path="/clients" element={<Client/>}/>
                     <Route path="/profile" element={<Profile />} />
                 </>
 

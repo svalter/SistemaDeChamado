@@ -1,19 +1,19 @@
 import React from "react";
 
-import  styled from './Dashboard.module.css';
+import  styled from './Client.module.css';
 
 import Sidebar from '../../components/Sidebar';
 import Title from '../../components/Title';
 
-import { FiHome } from 'react-icons/fi'
+import { FiUsers } from 'react-icons/fi'
 
-export default function Dashboard() {
+export default function Client() {
     return (
       <div>
             <Sidebar />
             <div className={styled.content}>
-                <Title name="Dashboard">
-                    <FiHome size={25}/>
+                <Title name="Clientes">
+                    <FiUsers size={25}/>
                 </Title>
             </div>
         </div>
