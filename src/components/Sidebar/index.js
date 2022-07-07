@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/auth";
 import { FiHome, FiSettings, FiUsers, FiLogOut } from 'react-icons/fi';
 import styled from './Sidebar.module.css';
-import Logo from '../../assets/logo/logo.svg';
+import avatar from '../../assets/icones/avatar.svg';
 
 
 export default function Sidebar() {
@@ -12,8 +12,8 @@ export default function Sidebar() {
 
     return (
         <div className={styled.containerSiderbar}>
-            <div>
-                <img src={user.avatarUrl === null ? Logo : user.avatarUrl} alt="Foto avatar" />
+            <div className={styled.contentAvatar}>
+                <img src={user.avatarUrl === null ? avatar : user.avatarUrl} alt="Foto avatar" />
             </div>
             <div className={styled.containerLinks}>
       
