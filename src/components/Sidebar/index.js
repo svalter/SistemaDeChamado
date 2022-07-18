@@ -28,7 +28,7 @@ export default function Sidebar() {
                     <p>Chamados</p>
                 </Link>
 
-                <Link to="/clients" className={styled.linksTitle}>
+                <Link to="/custumers" className={styled.linksTitle}>
                     <FiUsers className={styled.linksIcons} />
                     <p>Clientes</p>
                 </Link>
