@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import styled from './Profile.module.css';
+import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import Sidebar from '../../components/Sidebar';
 import Title from '../../components/Title';
@@ -127,9 +128,9 @@ export default function Profile() {
                                     Salvar
                                 </button>
 
-                                 <button onClick={() => signOut()} className={styled.buttonToCancel}>
+                                <Link to="/dashboard" className={styled.buttonToCancel}>
                                     Cancelar
-                                </button>
+                                </Link>
                             </div>
                         </form>
                     </div>
