@@ -23,6 +23,12 @@
     margin-bottom: 15px;
 }
 
+.contentAction {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 20px;
+}
 .buttonNewCalled {
     width: 100%;
     max-width: 200px;
@@ -48,4 +54,49 @@
 .buttonNewCalled:hover{
     cursor:pointer;
     background-color: #3D8A87;
+}
+
+table {
+    border:1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x:scroll !important;
+}
+
+table caption {
+    font-size: 1.5rem;
+    margin: .5rem 0 .75em;
+}
+
+table tr{
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+table th,
+table td{
+    padding: .62em;
+    text-align: center;
+}
+
+.badge {
+    padding: 3px;
+    border-radius: 3px;
+    color: #FFFFFF;
+}
+
+.buttonAction {
+    border:0;
+    padding: 5px;
+    margin-left: 2px;
+    align-items: center;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.buttonAction svg {
+    vertical-align: middle;
 }
