@@ -1,10 +1,7 @@
 import React from "react";
-
 import  styled from './Client.module.css';
-
 import Sidebar from '../../components/Sidebar';
 import Title from '../../components/Title';
-
 import { FiUsers } from 'react-icons/fi'
 
 export default function Client() {

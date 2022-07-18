@@ -1,7 +1,108 @@
-.content{
+.content {
     margin-left: 200px;
     width: calc(100% -200px);
     min-height: 100vh;
     padding: 20px;
     background-color: #EEEEEE;
+}
+
+.container {
+    background-color: #FFFFFF;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.containerForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.contentAvatar {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px!important;
+}
+
+.contentAvatar input {
+    display: none;
+}
+
+.containerForm label {
+    color: #4A4767;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.iconAddAvatar {
+    position: absolute;
+    z-index: 3;
+}
+
+.photoProfile {
+    border-radius: 50%;
+}
+
+.inputs {
+    width: 100% !important;
+    max-width: 450px;
+    height: 45px;
+    border-radius: 5px;
+    width: 90%;
+    border: 0.5px solid #bebebe;
+    color: #4A4767;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.buttonToSave,
+.buttonToCancel {
+    width: 100%;
+    max-width: 200px;
+    height: 45px;
+    color: #FFFFFF;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    transition: 0.2 ease-in-out;
+}
+
+.buttonToSave {
+    background-color: #00B495;
+}
+
+.buttonToCancel {
+    background-color: #AC373C;
+}
+
+.buttonToSave:hover,
+.buttonToCancel:hover {
+    cursor: pointer;
+}
+
+.buttonToSave:hover {
+    background-color: #3D8A87;
+}
+
+.buttonToCancel:hover {
+    background-color: #8a0f15;
+}
+
+.actions {
+    margin-top: 10px;
+    display: flex;
+    width: 100% !important;
+    max-width: 450px;
+    justify-content: space-between;
 }

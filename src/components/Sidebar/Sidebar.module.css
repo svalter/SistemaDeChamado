@@ -2,8 +2,8 @@
     position: fixed;
     width: 200px;
     height: 100vh;
-    background: #00134A;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    background: #0F0C29;
+    box-shadow: 0px 3px 6px #00000029;
 }
 
 .containerLogo{
@@ -16,8 +16,18 @@
     border-bottom:1px solid #7a9bff;
 }
 
-.containerLinks{
-    padding: 10px 0;
+.contentAvatar {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #383554;
+    background-color: #3A3756;
+}
+
+.photoProfile {
+    border-radius: 50%;
 }
 
 .links{
@@ -28,13 +38,13 @@
     justify-content: start;
     align-items: center;
     padding: 0 10px;
-    transition: 0.2s ease-in-out;
+    transition: 0.1s ease-in-out;
 }
 
 .linksTitle:hover,
 .buttonLogOut:hover{
     cursor: pointer;
-    background-color: #003A78;
+    background-color: #080616;
     border-left: 2px solid #FFFFFF;
 }
 

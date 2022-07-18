@@ -1,10 +1,7 @@
 import React from "react";
-
 import  styled from './Dashboard.module.css';
-
 import Sidebar from '../../components/Sidebar';
 import Title from '../../components/Title';
-
 import { FiHome } from 'react-icons/fi'
 
 export default function Dashboard() {
