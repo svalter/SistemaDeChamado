@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/auth";
 import { FiHome, FiSettings, FiUsers, FiLogOut } from 'react-icons/fi';
@@ -13,10 +13,16 @@ export default function Sidebar() {
     return (
         <div className={styled.containerSiderbar}>
             <div className={styled.contentAvatar}>
-                <img src={user.avatarUrl === null ? avatar : user.avatarUrl} alt="Foto avatar" />
+                {
+                    user.avatarUrl === null ?
+                        <img src={avatar} alt="Foto avatar" />
+                        :
+                        <img src={user.avatarUrl} width="80" height="80" alt="Foto de perfil do usuário" className={styled.photoProfile} />
+                }
             </div>
+
             <div className={styled.containerLinks}>
-      
+
                 <Link to="/dashboard" className={styled.linksTitle}>
                     <FiHome className={styled.linksIcons} />
                     <p>Chamados</p>
@@ -32,12 +38,10 @@ export default function Sidebar() {
                     <p >Configurações</p>
                 </Link>
 
-                <div>
-                    <button onClick={() => signOut()} className={styled.buttonLogOut}>
-                        <FiLogOut className={styled.linksIcons}/>
-                        Sair
-                    </button>
-                </div>
+                <button onClick={() => signOut()} className={styled.buttonLogOut}>
+                    <FiLogOut className={styled.linksIcons} />
+                    Sair
+                </button>
             </div>
         </div>
     )

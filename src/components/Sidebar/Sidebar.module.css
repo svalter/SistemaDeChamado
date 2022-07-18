@@ -26,6 +26,10 @@
     background-color: #3A3756;
 }
 
+.photoProfile {
+    border-radius: 50%;
+}
+
 .links{
     width: 100%;
     height: 45px;
