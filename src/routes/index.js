@@ -6,6 +6,7 @@ import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
 import Custumers from '../pages/Custumers';
+import NewCalled from '../pages/NewCalled';
 
 export default function RoutesApp() {
     const { signed, loading } = useContext(AuthContext);
@@ -24,6 +25,7 @@ export default function RoutesApp() {
                     <Route path="/dashboard" element={<Dashboard />}/>
                     <Route path="/custumers" element={<Custumers/>}/>
                     <Route path="/profile" element={<Profile />} />
+                    <Route path="/newCalled" element={<NewCalled />} />
                 
                 </>
 
