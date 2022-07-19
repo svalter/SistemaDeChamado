@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import styled from './NewCalled.module.css';
+import { toast } from 'react-toastify';
 import Sidebar from '../../components/Sidebar';
 import Title from '../../components/Title';
 import { FiPlus } from 'react-icons/fi';
@@ -48,8 +49,28 @@ export default function NewCalled() {
         loadCustumers();
     }, []);
 
-    function handleRegister(e) {
+    async function handleRegister(e) {
         e.preventDefault();
+
+        await firebase.firestore().collection('called')
+        .add({
+           created: new Date(),
+           custumer: custumers[custumerSelected].nameCompany,
+           custumerId:  custumers[custumerSelected].id,
+           description: description,
+           status: status,
+           complement: complement,
+           userId: user.uid
+        })
+        .then(() => {
+            toast.success('Chamado cadastrado com sucesso!');
+            setComplement('');
+            setCustumerSelected(0);
+        })
+        .catch((error) => {
+            toast.error('Ops, erro ao registrar!')
+            console.log(error)
+        })
     }
 
     function handleChangeSelect(e) {
@@ -60,7 +81,8 @@ export default function NewCalled() {
         setStatus(e.target.value);
     }
 
-    function handleChangeCustumers() {
+    function handleChangeCustumers(e) {
+        setCustumerSelected(e.target.value);
 
     }
 
