@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function Dashboard() {
 
-    const [called, setCalled] = useState([2]);
+    const [called, setCalled] = useState([]);
 
     return (
         <div>
@@ -21,7 +21,7 @@ export default function Dashboard() {
                     <div className={styled.container}>
                         <span>Nenhum chamado registrado...</span>
 
-                        <Link to="/new" className={styled.buttonNewCalled}>
+                        <Link to="/newCalled" className={styled.buttonNewCalled}>
                             <FiPlus color="#FFFFFF" size={25}></FiPlus>
                             Novo chamado
                         </Link>
@@ -29,7 +29,7 @@ export default function Dashboard() {
                 ) :
                     <>
                         <div className={styled.contentAction}>
-                            <Link to="/new" className={styled.buttonNewCalled}>
+                            <Link to="/newCalled" className={styled.buttonNewCalled}>
                                 <FiPlus color="#FFFFFF" size={25}></FiPlus>
                                 Novo chamado
                             </Link>

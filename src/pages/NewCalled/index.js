@@ -1,0 +1,149 @@
+import React, { useContext, useState, useEffect } from 'react';
+import styled from './NewCalled.module.css';
+import Sidebar from '../../components/Sidebar';
+import Title from '../../components/Title';
+import { FiPlus } from 'react-icons/fi';
+import firebase from '../../services/firebaseConnection';
+import { AuthContext } from '../../contexts/auth';
+
+export default function NewCalled() {
+
+    const [loadCustumers, setLoadCustumers] = useState(true);   
+    const [custumers, setCustumers] = useState([]);
+    const [custumerSelected, setCustumerSelected] = useState(0);
+    const [description, setDescription] = useState('Suporte');
+    const [status, setStatus] = useState('Aberto');
+    const [complement, setComplement] = useState('');
+
+    const { user } = useContext(AuthContext);
+
+    useEffect(() => {
+        async function loadCustumers() {
+            let lista = [];
+            await  firebase.firestore().collection('custumers')
+            .get()
+            .then((snapshot)=> {
+                
+                snapshot.forEach((doc) => {
+                    lista.push({
+                        id: doc.id,
+                        nameCompany: doc.data().nameCompany
+                    })
+                })
+                if(lista.length === 0) {
+                    setCustumers([ { id: '1', nameCompany: 'FREELA'}]);
+                    setLoadCustumers(false);
+                    return;
+                }
+            })
+            .catch((error) =>{
+                setLoadCustumers(false);
+                setCustumers([ { id:'1', nameCompany: ''}]);
+            })
+
+            setCustumers(lista);
+            setLoadCustumers(false);
+        }
+
+        loadCustumers();
+    }, []);
+
+    function handleRegister(e) {
+        e.preventDefault();
+    }
+
+    function handleChangeSelect(e) {
+        setDescription(e.target.value);
+    }
+
+    function handleOptionChange(e) {
+        setStatus(e.target.value);
+    }
+
+    function handleChangeCustumers() {
+
+    }
+
+    return (
+        <div>
+            <Sidebar />
+            <div className={styled.content}>
+                <Title name="Cadastro Chamados">
+                    <FiPlus size={25} />
+                </Title>
+                <div className={styled.container}>
+                    <div>
+                        <form className={styled.containerForm} onSubmit={handleRegister}>
+                     
+                            <label>Cliente</label>
+                            <select className={styled.select} value={custumerSelected} onChange={handleChangeCustumers}>
+                                <option key={1} value={1}>
+                                    Sujeito Programador
+                                </option>
+                                {custumers.map((item, index) => {
+                                    return(
+                                        <option key={item.id} value={index}>
+                                            {item.nameCompany}
+                                        </option>
+                                    )
+                                })}
+                            </select>
+                            
+                            <label>Assunto</label>
+                            <select className={styled.select} value={description} onChange={handleChangeSelect}>
+                                <option value="Suporte">Suporte</option>
+                                <option value="Visita Técnica">Visita Técnica</option>
+                                <option value="Financeiro">Financeiro</option>
+                            </select>
+
+                                         
+                            <label>Status</label>
+                            <div className={styled.status}>
+                                <input
+                                    type="radio"
+                                    name="radio"
+                                    value="Aberto"
+                                    onChange={handleOptionChange}
+                                    checked={status === 'Aberto'}
+                                />
+                                <span>Em Aberto</span>
+
+                                <input
+                                    type="radio"
+                                    name="radio"
+                                    value="Progresso"
+                                    onChange={handleOptionChange}
+                                    checked={status === 'Progresso'}
+                                />
+                                <span>Progresso</span>
+
+                                <input
+                                    type="radio"
+                                    name="radio"
+                                    value="Atendido"
+                                    onChange={handleOptionChange}
+                                    checked={status === 'Atendido'}
+                                />
+                                <span>Atendido</span>
+                            </div>
+
+                            <label>Complemento</label>
+                            <textarea
+                                type="text"
+                                placeholder="Descreva seu problema (opcional)"
+                                value={complement}
+                                onChange={ (e) => setComplement(e.target.value)}>
+                            </textarea>
+
+                            <div className={styled.actions}> 
+                                <button type="submit" className={styled.buttonToSave}>
+                                    Cadastrar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
