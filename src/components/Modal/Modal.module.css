@@ -1,0 +1,23 @@
+.modal {
+    position: fixed;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.container{
+    position: fixed;
+    top:15%;
+    left: 0;
+    right: 0;
+    max-width: 600px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 2em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+

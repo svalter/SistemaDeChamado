@@ -12,6 +12,15 @@
     margin-top: 20px;
     width: 100%;
     padding: 20px;
+   
+}
+
+.contentCustumer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .containerForm {
@@ -66,7 +75,8 @@
 }
 
 .buttonToSave,
-.buttonToCancel {
+.buttonToCancel,
+.buttonNewCustumer {
     width: 100%;
     max-width: 200px;
     height: 45px;
@@ -84,11 +94,13 @@
     justify-content: center;
 }
 
-.buttonToSave {
+.buttonToSave,
+.buttonNewCustumer {
     background-color: #00B495;
 }
 
-.buttonToSave:hover {
+.buttonToSave:hover,
+.buttonNewCustumer:hover  {
     cursor: pointer;
 }
 
@@ -96,6 +108,9 @@
     background-color: #3D8A87;
 }
 
+.buttonNewCustumer {
+    margin-top: 20px;
+}
 .actions {
     margin-top: 20px;
     display: flex;
