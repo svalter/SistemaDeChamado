@@ -6,10 +6,15 @@ import Title from '../../components/Title';
 import { Link } from "react-router-dom";
 import { FiPlus } from 'react-icons/fi';
 import firebase from '../../services/firebaseConnection';
+import {useParams, useNavigate} from 'react-router-dom';
 import { AuthContext } from '../../contexts/auth';
 
 export default function NewCalled() {
 
+    const { id } = useParams();
+    const history = useNavigate();
+
+    
     const [loadCustumers, setLoadCustumers] = useState(true);
     const [custumers, setCustumers] = useState([]);
     const [custumerSelected, setCustumerSelected] = useState(0);

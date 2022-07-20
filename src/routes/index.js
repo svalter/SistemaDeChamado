@@ -26,6 +26,7 @@ export default function RoutesApp() {
                     <Route path="/custumers" element={<Custumers/>}/>
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/newCalled" element={<NewCalled />} />
+                    <Route path="/newCalled/:id" element={<NewCalled />} />
                 
                 </>
 
