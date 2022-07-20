@@ -2,11 +2,12 @@ import React from 'react';
 import styled from './Modal.module.css';
 import {FiX}  from 'react-icons/fi';
 
-export default function Modal(content, close) {
+export default function Modal(content) {
+
     return(
         <div className={styled.modal}>
             <div className={styled.container}>
-                <button className={styled.close} onClick={close}>
+                <button className={styled.close} onClick={content.close}>
                     <FiX size={25} color="#FFF"/>
                     Voltar
                 </button>

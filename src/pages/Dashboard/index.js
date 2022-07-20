@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from './Dashboard.module.css';
 import Sidebar from '../../components/Sidebar';
 import Title from '../../components/Title';
-import Modal from "../../components/Modal";
+import Modal from '../../components/Modal';
 import { FiEdit2, FiMessageSquare, FiPlus, FiSearch } from 'react-icons/fi'
 import { Link } from "react-router-dom";
 import { format } from 'date-fns';
@@ -142,9 +142,9 @@ export default function Dashboard() {
                                                         onClick={() => togglePostModal(item)}>
                                                             <FiSearch color="#FFFFFF" size={15}/>
                                                     </button>
-                                                    <button className={styled.buttonAction} style={{ backgroundColor: '#F6A935'}}>
+                                                    <Link to={`/new/${item.id}`}className={styled.buttonAction} style={{ backgroundColor: '#F6A935'}}>
                                                         <FiEdit2 color="#FFFFFF" size={15}/>
-                                                    </button>
+                                                    </Link>
                                                 </td>
                                             </tr>
                                         )
